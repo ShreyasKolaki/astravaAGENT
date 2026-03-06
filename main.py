@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException 
 from pydantic import BaseModel
 from enum import Enum
 from typing import List
@@ -8,9 +8,6 @@ from data_fetcher import get_market_data
 from market_agent import analyze_market
 from social_sentiment_agent import analyze_social_sentiment
 from financial_news_agent import fetch_financial_news
-# from sentiment_agent import analyze_sentiment
-# from news_agent import fetch_news
-
 
 app = FastAPI(title="AI Stock Prediction API")
 
@@ -19,8 +16,8 @@ app = FastAPI(title="AI Stock Prediction API")
 # STOCK ENUM (for dropdown control)
 # ---------------------------------------
 class StockName(str, Enum):
-    reliance = "reliance"
-    tcs = "tcs"
+    microsoft = "microsoft"
+    google = "google"
     nvda = "nvda"
     tsla = "tsla"
     aapl = "aapl"
@@ -30,8 +27,8 @@ class StockName(str, Enum):
 # TICKER MAPPING
 # ---------------------------------------
 STOCK_TICKERS = {
-    "reliance": "RELIANCE.NS",
-    "tcs": "TCS.NS",
+    "microsoft": "MSFT",
+    "google": "GOOGL",
     "nvda": "NVDA",
     "tsla": "TSLA",
     "aapl": "AAPL",
